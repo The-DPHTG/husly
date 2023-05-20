@@ -21,6 +21,12 @@ app.get("/", (req, res) => {
   res.render(path.join(__dirname, './public/views/index.ejs'));
 });
 
+app.get("/search", (req, res) => {
+  res.render(path.join(__dirname, './public/views/search.ejs'), {
+    location: req.query.location
+  });
+});
+
 app.listen(8080, () => {
   console.log('Listening on port ' + 8080);
 });
